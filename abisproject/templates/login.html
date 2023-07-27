@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Login</title>
+</head><h2>Login</h2>
+<body style="background-image:url('{% static 'images/irland.jpg' %}');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:100%100%;">
+<form action="login" method="post">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="enter your username"><br>
+  <input type="password" name="password" placeholder="enter your password"><br>
+  <input type="submit">
+</form>
+</body>
+</html>

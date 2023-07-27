@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Register</title>
+</head>
+<body style="background-image:url('{% static 'images/beach.jpeg' %}');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:100%100%;">
+<h2>Registration</h2>
+
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your username"><br>
+     <input type="text" name="first_name" placeholder="Enter your first_name"><br>
+     <input type="text" name="last_name" placeholder="Enter your Last_name"><br>
+     <input type="email" name="email" placeholder="Enter your email"><br>
+     <input type="password" name="password" placeholder="Enter your password"><br>
+     <input type="password" name="password1" placeholder="Enter your confirm password"><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
